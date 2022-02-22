@@ -16,26 +16,64 @@ Kevin Murphy, Google Research, Brain Team
 
 Feburary 2022
 
+---
+
+# Subspace neural bandits
+## Motivation
+<v-clicks>
+
+* We seek to solve the contextual-neural-bandit problem in a way that is **fully Bayesian** and **computationally-efficient**.
+* Current state-of-the-art solutions, although efficient, are not fully Bayesian.
+  1. Neural linear approximation
+  2. Lim2 approximation
+  3. Neural tangent approximation
+* Fully Bayesian solutions are computationally expensive
+  <!-- Not an online method; very expensive to compute at every timestep -->
+  1. Hamiltonian Monte Carlo (HMC) sampling of posterior beliefs
+  <!-- Does not scale well as the number of parameters increases -->
+  2. Extended Kalman Filter (EKF) online estimation of posterior beliefs
+
+</v-clicks>
+
+---
+
+# The ingredients
+
+<style>
+img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+}
+</style>
+
+1. Contextual bandits
+2. Thompson sampling
+3. Neural bandits
+4. Extended Kalman filter
+5. Subspace neural network
+
+<img src="/diagram1.jpg" width=400 height=400>
+
 ----
 
 # Contextual bandits
-## Li, et.al. (2012)
+## [Li, et.al. (2012)](https://arxiv.org/abs/1003.0146)
 
-Let $t=1,\ldots,T$. At every time step $t$,
+Let $\mathcal{A} = \{a^{(1)}, \ldots, a^{(K)}\}$ be a set of actions. At every time step $t=1,\ldots,T$
+1. we are given a context ${\bf s}_t$ 
+2. we decide, based on ${\bf s}_t$, an action $a_t \in \mathcal{A}$
+3. we obtain a reward $r_t$ based on the context ${\bf s}_t$ and the chosen action $a_t$
 
-1. we are given a set of action $\mathcal{A} = \{a^{(1)}, \ldots, a^{(K)}\}$ to choose from;
-2. we are given a context ${\bf s}_t$ to decide on an action to take
-3. we decide (based on some algorithm) some action $a_t \in \mathcal{A}$ to take
-4. we obtain a reward $r_t$ based on the context ${\bf s}_t$ and the action $a_t$
-
-<span style="background-color:#A7C7E7">Our goal is to maximise the expected reward $\sum_{t=1}^T\mathbb{E}[R_t]$</span>
+<span style="background-color:#A7C7E76E">Our goal is to choose the set of actions that maximise the expected reward $\sum_{t=1}^T\mathbb{E}[R_t]$</span>
 
 ---
 
 # Thompson Sampling
 ### One way to solve the bandit problem.
 
-Let $\mathcal{D}_t = (s_t, a_t, r_t)$ be a sequence of observations. Let $\mathcal{D}_{1:t} = \{\mathcal{D}_1, \ldots, \mathcal{D}_t\}$. Then, at every $t=1, \ldots, T$:
+Let $\mathcal{D}_t = (s_t, a_t, r_t)$ be a sequence of observations. Let $\mathcal{D}_{1:t} = \{\mathcal{D}_1, \ldots, \mathcal{D}_t\}$. Then, at every $t=1, \ldots, T$.
 
 1. Sample $\boldsymbol\theta_t \sim p(\cdot \vert \mathcal{D}_{1:t})$
 2. $a_t = \arg\max_{a \in \mathcal{A}} \mathbb{E}[R(s_t,a; \boldsymbol\theta_t)]$
@@ -55,13 +93,29 @@ $$
   p(r_t \vert {\bf s}_t, a, \theta_t) = \mathcal{N}\Big(r_t \vert f({\bf s}_t, a, \boldsymbol\theta_t), \sigma^2\Big)
 $$
 
-The main question: <span style="background-color:#A7C7E7"> How to determine $\boldsymbol\theta_t$ at every time step $t$ using Thompson sampling?</span>  
+The main question: <span style="background-color:#A7C7E76E"> How to determine $\boldsymbol\theta_t$ at every time step $t$ using Thompson sampling?</span>  
 
 We need to compute (or approximate) the posterior distribution of the parameters in the neural network:
 $$
     p(\boldsymbol\theta \vert \mathcal{D}_{1:t}) \propto p(\boldsymbol\theta) p(\mathcal{D}_{1:t} \vert \boldsymbol\theta)
 $$
 
+
+---
+
+# Extended Kalman filter and neural networks
+Online learning of neural network parameters
+
+$$
+  \begin{aligned}
+    \boldsymbol\theta_t \vert \boldsymbol\theta_{t-1} \sim \mathcal{N}(\boldsymbol\theta_{t-1}, \sigma^2 {\bf I}) \\
+    r_t \vert \boldsymbol\theta_t \sim \mathcal{N}(f({\bf s}_t, a_t, \boldsymbol\theta_t), \sigma^2 {\bf I})
+  \end{aligned}
+$$
+
+<video width=400 controls>
+  <source src="https://github.com/probml/probml-data/blob/main/data/ekf_mlp_demo.mp4?raw=true" type="video/mp4">
+</video>
 
 ---
 layout: two-cols
@@ -74,6 +128,3 @@ layout: two-cols
 ::right::
 
 # Fully Bayesian
-* HMC (Hamiltonian Monte Carlo) sampling of posterior $p(\boldsymbol\theta \vert \mathcal{D}_{1:t})$
-* Extended Kalman filter (EKF) online estimation of Neural Bandits
-* EKF subspace online estimation of Neural Bandits (Our method)
