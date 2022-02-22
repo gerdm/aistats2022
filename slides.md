@@ -71,10 +71,11 @@ Let $\mathcal{A} = \{a^{(1)}, \ldots, a^{(K)}\}$ be a set of actions. At every t
 ---
 
 # Thompson Sampling
-### One way to solve the bandit problem.
+<!-- One way to solve the bandit's problem -->
+### $R_t \sim p(\cdot \vert \boldsymbol\theta)$
+Let $\mathcal{D}_t = (s_t, a_t, r_t)$ be a sequence of observations. Let $\mathcal{D}_{1:t} = \{\mathcal{D}_1, \ldots, \mathcal{D}_t\}$.
 
-Let $\mathcal{D}_t = (s_t, a_t, r_t)$ be a sequence of observations. Let $\mathcal{D}_{1:t} = \{\mathcal{D}_1, \ldots, \mathcal{D}_t\}$. Then, at every $t=1, \ldots, T$.
-
+At every time step $t=1,\ldots, T$, we follow the following procedure:
 1. Sample $\boldsymbol\theta_t \sim p(\cdot \vert \mathcal{D}_{1:t})$
 2. $a_t = \arg\max_{a \in \mathcal{A}} \mathbb{E}[R(s_t,a; \boldsymbol\theta_t)]$
 3. Obtain $r_t \sim R(s_t,a_t; \boldsymbol\theta_t)$
@@ -90,16 +91,20 @@ Let $\mathcal{D}_t = (s_t, a_t, r_t)$ be a sequence of observations. Let $\mathc
 Let $f: \mathcal{S}\times\mathcal{A}\times\mathbb{R}^D \to \mathbb{R}^K$ be a neural network. A neural bandit is a contextual bandit where the reward is taken to be
 
 $$
-  p(r_t \vert {\bf s}_t, a, \theta_t) = \mathcal{N}\Big(r_t \vert f({\bf s}_t, a, \boldsymbol\theta_t), \sigma^2\Big)
+  R_t \vert {\bf s}_t, a, \theta_t \sim \mathcal{N}\Big(\cdot \vert f({\bf s}_t, a, \boldsymbol\theta_t), \sigma^2\Big)
 $$
+
 
 The main question: <span style="background-color:#A7C7E76E"> How to determine $\boldsymbol\theta_t$ at every time step $t$ using Thompson sampling?</span>  
 
 We need to compute (or approximate) the posterior distribution of the parameters in the neural network:
-$$
-    p(\boldsymbol\theta \vert \mathcal{D}_{1:t}) \propto p(\boldsymbol\theta) p(\mathcal{D}_{1:t} \vert \boldsymbol\theta)
-$$
 
+$$
+\begin{aligned}
+  p(\boldsymbol\theta \vert \mathcal{D}_{1:t}) &= p(\boldsymbol\theta \vert \mathcal{D}_{1:t-1}, \mathcal{D}_t)\\
+  &\propto p(\boldsymbol\theta \vert \mathcal{D}_{1:t-1}) p(\mathcal{D}_t \vert \boldsymbol\theta) \\
+\end{aligned}
+$$
 
 ---
 
