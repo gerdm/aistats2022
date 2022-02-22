@@ -121,15 +121,3 @@ $$
 <video width=400 controls>
   <source src="https://github.com/probml/probml-data/blob/main/data/ekf_mlp_demo.mp4?raw=true" type="video/mp4">
 </video>
-
----
-layout: two-cols
----
-# Partially Bayesian
-* Neural linear approximation
-* Lim2 approximation
-* Neural tangent approximation
-
-::right::
-
-# Fully Bayesian
