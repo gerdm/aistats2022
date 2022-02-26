@@ -51,7 +51,7 @@ At every time step $t=1,\ldots, T$, we follow the following procedure:
 Let $f: \mathcal{S}\times\mathcal{A}\times\mathbb{R}^D \to \mathbb{R}^K$ be a neural network. A neural bandit is a contextual bandit where the reward is taken to be
 
 $$
-  R_t \vert {\bf s}_t, a, \theta_t \sim \mathcal{N}\Big(\cdot \vert f({\bf s}_t, a, \boldsymbol\theta_t), \sigma^2\Big)
+  r_t \vert {\bf s}_t, a, \theta_t \sim \mathcal{N}\Big(f({\bf s}_t, a, \boldsymbol\theta_t), \sigma^2\Big)
 $$
 
 
