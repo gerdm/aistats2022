@@ -6,6 +6,12 @@
   transform: translate(-50%, -50%);
 }
 
+.horizonal-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .bottom-right {
     position: absolute;
     bottom: 0;
