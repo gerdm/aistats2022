@@ -35,27 +35,6 @@ Feburary 2022
 
 </v-clicks>
 
----
-
-# The ingredients
-
-<style>
-img {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-
-}
-</style>
-
-1. Contextual bandits
-2. Thompson sampling
-3. Neural bandits
-4. Extended Kalman filter
-5. Subspace neural network
-
-<img src="/diagram1.jpg" width=400 height=400>
-
 ----
 
 # Contextual bandits
