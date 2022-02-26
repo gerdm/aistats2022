@@ -100,6 +100,6 @@ $$
   \end{aligned}
 $$
 
-<video width=400 controls>
+<video width=400 loop="true" autoplay="autoplay" muted>
   <source src="https://github.com/probml/probml-data/blob/main/data/ekf_mlp_demo.mp4?raw=true" type="video/mp4">
 </video>
