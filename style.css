@@ -5,3 +5,9 @@
   /* bring your own prefixes */
   transform: translate(-50%, -50%);
 }
+
+.bottom-right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
