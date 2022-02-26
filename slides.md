@@ -41,7 +41,10 @@ At every time step $t=1,\ldots, T$, we follow the following procedure:
 3. Obtain $r_t \sim R(s_t,a_t; \boldsymbol\theta_t)$
 4. Store $\mathcal{D}_t = (s_t, a_t, r_t)$
 
-<!-- ToDo: Add bayesian-linear-regression bandit example in pyprobml-->
+<video width=900 loop="true" autoplay="autoplay" muted>
+  <source src="/ts-bandits.mp4" type="video/mp4">
+</video>
+
 
 ---
 
