@@ -19,7 +19,7 @@ Feburary 2022
 ---
 
 # Contextual bandits
-## [Li, et.al. (2012)](https://arxiv.org/abs/1003.0146)
+### [Li, et.al. (2012)](https://arxiv.org/abs/1003.0146)
 
 Let $\mathcal{A} = \{a^{(1)}, \ldots, a^{(K)}\}$ be a set of actions. At every time step $t=1,\ldots,T$
 1. we are given a context ${\bf s}_t$ 
@@ -32,7 +32,7 @@ Let $\mathcal{A} = \{a^{(1)}, \ldots, a^{(K)}\}$ be a set of actions. At every t
 
 # Thompson Sampling
 <!-- One way to solve the bandit's problem -->
-### $R_t \sim p(\cdot \vert \boldsymbol\theta)$
+### [Agrawal, Goyal (2014)](https://arxiv.org/abs/1209.3352), [Russo, et.al. (2014)](https://arxiv.org/abs/1402.0298)
 Let $\mathcal{D}_t = (s_t, a_t, r_t)$ be a sequence of observations. Let $\mathcal{D}_{1:t} = \{\mathcal{D}_1, \ldots, \mathcal{D}_t\}$.
 
 At every time step $t=1,\ldots, T$, we follow the following procedure:
