@@ -32,7 +32,7 @@ Let $\mathcal{A} = \{a^{(1)}, \ldots, a^{(K)}\}$ be a set of actions. At every t
 
 # Thompson Sampling
 <!-- One way to solve the bandit's problem -->
-### [Agrawal, Goyal (2014)](https://arxiv.org/abs/1209.3352), [Russo, et.al. (2014)](https://arxiv.org/abs/1402.0298)
+### [Agrawal and Goyal (2014)](https://arxiv.org/abs/1209.3352), [Russo, et.al. (2014)](https://arxiv.org/abs/1402.0298)
 Let $\mathcal{D}_t = (s_t, a_t, r_t)$ be a sequence of observations. Let $\mathcal{D}_{1:t} = \{\mathcal{D}_1, \ldots, \mathcal{D}_t\}$.
 
 At every time step $t=1,\ldots, T$, we follow the following procedure:
@@ -91,6 +91,7 @@ $$
 ----
 
 # Extended Kalman filter and neural networks
+### [Singhal and Wu (1988)](https://proceedings.neurips.cc/paper/1988/hash/38b3eff8baf56627478ec76a704e9b52-Abstract.html)
 Online learning of neural network parameters
 
 $$
