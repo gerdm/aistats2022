@@ -155,3 +155,12 @@ $$
   <img width=500 src="/time-bandits-mnist.png">
 </div>
 
+---
+
+# Results
+## Reward and subspace dimension
+
+<br>
+<img align="left" width=400 src="covertype-snb-dim-reward.png">
+<img align="right" width=400 src="covertype-snb-dim-reward.png">
+
