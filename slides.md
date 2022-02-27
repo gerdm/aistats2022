@@ -135,7 +135,7 @@ $$
 \end{aligned}
 $$
 
-<img class="bottom-right" src="subspace-neural-bandit-diagram.jpg" width=300 height=300>
+<img class="bottom-right" src="/subspace-neural-bandit-diagram.jpg" width=300 height=300>
 
 ---
 
@@ -161,8 +161,8 @@ $$
 ## Reward and subspace dimension
 
 <br>
-<img align="left" width=400 src="covertype-snb-dim-reward.png">
-<img align="right" width=400 src="covertype-snb-dim-reward.png">
+<img align="left" width=400 src="/covertype-snb-dim-reward.png">
+<img align="right" width=400 src="/covertype-snb-dim-reward.png">
 
 ---
 
