@@ -164,3 +164,11 @@ $$
 <img align="left" width=400 src="covertype-snb-dim-reward.png">
 <img align="right" width=400 src="covertype-snb-dim-reward.png">
 
+---
+
+# Subspace neural bandits
+
+<div class="centered">
+  <h2 style="line-height:100px;"> <a href="https://arxiv.org/abs/2112.00195">📑 Paper</a></h2>
+  <h2> <a href="https://github.com/probml/bandits">💻 Github repo</a></h2>
+</div>
