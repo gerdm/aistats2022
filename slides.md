@@ -106,3 +106,52 @@ $$
 <video class="horizontal-center" width=400 loop="true" autoplay="autoplay" muted>
   <source src="https://github.com/probml/probml-data/blob/main/data/ekf_mlp_demo.mp4?raw=true" type="video/mp4">
 </video>
+
+---
+
+# Neural networks (in a subspace)
+### [Li, et.al. (2018)](https://arxiv.org/abs/1804.08838)
+Online learning of neural network parameters **in a subspace**.
+
+Neural networks live in a linear subspace 
+
+$$
+  \boldsymbol\theta({\bf z}_t) = {\bf A z}_{t} + \boldsymbol\theta_*
+$$
+
+<img class="horizontal-center" src="/subspace-neural-net.png" width=400>
+
+---
+
+# Subspace neural bandits
+### Extended Kalman filter and neural networks in a subspace.
+We learn a subspace ${\bf z} \in \mathbb{R}^d$
+
+$$
+\begin{aligned}
+  \boldsymbol\theta({\bf z}_t) &= {\bf A z}_{t} + \boldsymbol\theta_* \\
+  {\bf z}_t \vert {\bf z}_{t-1}  &\sim \mathcal{N}({\bf z}_{t-1}, \tau^2 {\bf I}) \\
+  {\bf r}_t \vert {\bf z}_t &\sim \mathcal{N}\Big(f({\bf s}_t, a_t, \boldsymbol\theta({\bf z}_t)), \sigma^2 {\bf I}\Big)
+\end{aligned}
+$$
+
+<img class="bottom-right" src="subspace-neural-bandit-diagram.jpg" width=300 height=300>
+
+---
+
+# Results
+## MNIST: cumulative reward
+
+<div class="centered">
+  <img width=500 src="/reward-bandits-mnist.png">
+</div>
+
+---
+
+# Results
+## MNIST: running time
+
+<div class="centered">
+  <img width=500 src="/time-bandits-mnist.png">
+</div>
+
