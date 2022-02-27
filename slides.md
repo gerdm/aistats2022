@@ -26,7 +26,7 @@ Let $\mathcal{A} = \{a^{(1)}, \ldots, a^{(K)}\}$ be a set of actions. At every t
 2. we decide, based on ${\bf s}_t$, an action $a_t \in \mathcal{A}$
 3. we obtain a reward $r_t$ based on the context ${\bf s}_t$ and the chosen action $a_t$
 
-<span style="background-color:#A7C7E76E">Our goal is to choose the set of actions that maximise the expected reward $\sum_{t=1}^T\mathbb{E}[R_t]$</span>
+<span style="background-color:#A7C7E76E">Our goal is to choose the set of actions that maximise the expected reward $\sum_{t=1}^T\mathbb{E}[R_t]$</span>.
 
 ---
 
@@ -79,7 +79,7 @@ $$
   1. Neural linear approximation
   2. Lim2 approximation
   3. Neural tangent approximation
-* Fully Bayesian solutions are computationally expensive
+* Fully Bayesian solutions are computationally expensive.
   <!-- Not an online method; very expensive to compute at every timestep -->
   1. Hamiltonian Monte Carlo (HMC) sampling of posterior beliefs
   <!-- Does not scale well as the number of parameters increases -->
