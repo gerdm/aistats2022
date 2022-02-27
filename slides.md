@@ -75,7 +75,6 @@ $$
 ## Motivation
 <v-clicks>
 
-* We seek to solve the contextual-neural-bandit problem in a way that is **fully Bayesian** and **computationally-efficient**.
 * Current state-of-the-art solutions, although efficient, are not fully Bayesian.
   1. Neural linear approximation
   2. Lim2 approximation
@@ -85,6 +84,7 @@ $$
   1. Hamiltonian Monte Carlo (HMC) sampling of posterior beliefs
   <!-- Does not scale well as the number of parameters increases -->
   2. Extended Kalman Filter (EKF) online estimation of posterior beliefs
+* We seek to solve the contextual-neural-bandit problem in a way that is **fully Bayesian** and **computationally-efficient**.
 
 </v-clicks>
 
