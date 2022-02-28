@@ -41,6 +41,8 @@ At every time step $t=1,\ldots, T$, we follow the following procedure:
 3. Obtain $r_t \sim R(s_t,a_t; \boldsymbol\theta_t)$
 4. Store $\mathcal{D}_t = (s_t, a_t, r_t)$
 
+<br>
+
 <video width=900 loop="true" autoplay="autoplay" muted>
   <source src="/ts-bandits.mp4" type="video/mp4">
 </video>
@@ -103,7 +105,7 @@ $$
 
 <br/>
 
-<video class="horizontal-center" width=400 loop="true" autoplay="autoplay" muted>
+<video class="horizontal-center" width=370 loop="true" autoplay="autoplay" muted>
   <source src="https://github.com/probml/probml-data/blob/main/data/ekf_mlp_demo.mp4?raw=true" type="video/mp4">
 </video>
 
@@ -118,6 +120,8 @@ Neural networks live in a linear subspace
 $$
   \boldsymbol\theta({\bf z}_t) = {\bf A z}_{t} + \boldsymbol\theta_*
 $$
+
+<br>
 
 <img class="horizontal-center" src="/subspace-neural-net.png" width=400>
 
@@ -135,7 +139,7 @@ $$
 \end{aligned}
 $$
 
-<img class="bottom-right" src="/subspace-neural-bandit-diagram.jpg" width=300 height=300>
+<img class="horizontal-center" src="/subspace-neural-bandit-diagram.jpg" width=300 height=300>
 
 ---
 
