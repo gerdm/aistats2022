@@ -147,8 +147,8 @@ $$
 # Results
 ### MNIST: cumulative reward  
 
-* Classification-turned-bandit problem
-* Maximum reward is $T=5000$ (total number of samples)
+Classification-turned-bandit problem.  
+Maximum reward is $T=5000$ (total number of samples).
 
 <br>
 <br>
@@ -168,7 +168,7 @@ $$
 
 # Results
 ### Effect of subspace dimensionality
-* We seek to make $d$ as small as possible.
+We seek to make $d$ as small as possible.
 
 <br>
 
@@ -178,11 +178,7 @@ $$
 ---
 
 # Subspace neural bandits
-### dhd
-
-```
-probml.github.io/bandits
-```
+### gerdm.github.io/aistats2022
 
 <div class="centered">
   <h2 style="line-height:100px;"> <a href="https://arxiv.org/abs/2112.00195">📑 Paper</a></h2>
