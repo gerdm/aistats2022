@@ -41,7 +41,7 @@ At every time step $t=1,\ldots, T$, we follow the following procedure:
 3. Obtain $r_t \sim R(s_t,a_t; \boldsymbol\theta_t)$
 4. Store $\mathcal{D}_t = (s_t, a_t, r_t)$
 
-<br>
+*Example*: Beta-Bernoulli bandit with $K=4$ arms.
 
 <video width=900 loop="true" autoplay="autoplay" muted>
   <source src="/ts-bandits.mp4" type="video/mp4">
@@ -75,12 +75,14 @@ $$
 
 # Subspace neural bandits
 ## Motivation
-<v-clicks>
 
 * Current state-of-the-art solutions, although efficient, are not fully Bayesian.
   1. Neural linear approximation
   2. Lim2 approximation
   3. Neural tangent approximation
+
+<v-clicks>
+
 * Fully Bayesian solutions are computationally expensive.
   <!-- Not an online method; very expensive to compute at every timestep -->
   1. Hamiltonian Monte Carlo (HMC) sampling of posterior beliefs
@@ -112,10 +114,9 @@ $$
 ---
 
 # Neural networks (in a subspace)
-### [Li, et.al. (2018)](https://arxiv.org/abs/1804.08838)
-Online learning of neural network parameters **in a subspace**.
-
-Neural networks live in a linear subspace 
+### [Li, et.al. (2018)](https://arxiv.org/abs/1804.08838), [Larsen, et.al. (2021)](https://arxiv.org/abs/2107.05802)
+Stochastic gradient descent (SGD) for neural networks **in a subspace**.  
+Neural networks live in a linear subspace.
 
 $$
   \boldsymbol\theta({\bf z}_t) = {\bf A z}_{t} + \boldsymbol\theta_*
@@ -127,7 +128,7 @@ $$
 
 ---
 
-# Subspace neural bandits
+# Our contribution: subspace neural bandits
 ### Extended Kalman filter and neural networks in a subspace.
 We learn a subspace ${\bf z} \in \mathbb{R}^d$
 
@@ -144,16 +145,20 @@ $$
 ---
 
 # Results
-## MNIST: cumulative reward
+### MNIST: cumulative reward  
 
-<div class="centered">
-  <img width=500 src="/reward-bandits-mnist.png">
-</div>
+* Classification-turned-bandit problem
+* Maximum reward is $T=5000$ (total number of samples)
+
+<br>
+<br>
+
+<img class="horizontal-center" width=500 src="/reward-bandits-mnist.png">
 
 ---
 
 # Results
-## MNIST: running time
+### MNIST: running time
 
 <div class="centered">
   <img width=500 src="/time-bandits-mnist.png">
@@ -162,15 +167,22 @@ $$
 ---
 
 # Results
-## Reward and subspace dimension
+### Effect of subspace dimensionality
+* We seek to make $d$ as small as possible.
 
 <br>
+
 <img align="left" width=400 src="/covertype-snb-dim-reward.png">
 <img align="right" width=400 src="/covertype-snb-dim-reward.png">
 
 ---
 
 # Subspace neural bandits
+### dhd
+
+```
+probml.github.io/bandits
+```
 
 <div class="centered">
   <h2 style="line-height:100px;"> <a href="https://arxiv.org/abs/2112.00195">📑 Paper</a></h2>
